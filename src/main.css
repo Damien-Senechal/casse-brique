@@ -1,0 +1,53 @@
+body{
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    background-color: #000000;
+    text-align: center;
+}
+a{
+    color: #808080;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 1s;
+}
+a:hover{
+    color: #ff0000;
+    text-decoration: underline;
+}
+a:visited{
+    color: #880000;
+}
+#game{
+    margin-top: 100px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+
+}
+canvas{
+    outline: 1px solid #333;
+
+}
+
+#HUD{
+    color:white;
+    font-size : 1vw;
+    display: flex;
+    justify-content: left;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.score{
+    color:white;
+}
+.name{
+    font-size: 1vw;
+}
+
+#scores >* {
+    margin: 1vw;
+}
