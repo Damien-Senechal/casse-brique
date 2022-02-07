@@ -49,13 +49,13 @@ class Scene extends Phaser.Scene{
         }
 
         this.physics.add.collider(this.player, this.ball, function () {
-            console.log('touche player 1')
+            //console.log('touche player 1')
             me.rebond(me.player)
         })
 
         this.physics.add.collider(this.walls, this.ball);
         this.physics.add.collider(this.bricks, this.ball, function (obj1, obj2) {
-            console.log(obj2.color)
+            //console.log(obj2.color)
             if(obj2.color === "RED"){
                 me.score.score+=10;
             }
@@ -72,8 +72,8 @@ class Scene extends Phaser.Scene{
 
     rebond(player){
         let me = this ;
-        console.log(me.player.x);
-        console.log(me.ball.x);
+        //console.log(me.player.x);
+        //console.log(me.ball.x);
         let largeurPlayer = player.displayWidth;
 
         let positionRelativePlayer = (me.ball.x - player.x);
@@ -82,8 +82,9 @@ class Scene extends Phaser.Scene{
         positionRelativePlayer = positionRelativePlayer*2-1;
 
         this.ball.setVelocityX(me.ball.body.velocity.x + positionRelativePlayer * largeurPlayer);
+        this.ball.setVelocityY(me.ball.body.velocity.y-25);
     }
-    
+
 
     balleAucentre(){
         this.ball.x = game.config.width/2
@@ -161,6 +162,7 @@ class Scene extends Phaser.Scene{
             this.scene.restart();
             alert("Vous avez gagné !");
         }
+        console.log(this.ball.body.velocity.y)
     }
 
 }
