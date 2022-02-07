@@ -81,8 +81,9 @@ class Scene extends Phaser.Scene{
         positionRelativePlayer = (positionRelativePlayer / largeurPlayer)
         positionRelativePlayer = positionRelativePlayer*2-1;
 
-        this.ball.setVelocityX(me.ball.body.velocity.x + positionRelativePlayer * 50);
+        this.ball.setVelocityX(me.ball.body.velocity.x + positionRelativePlayer * largeurPlayer);
     }
+    
 
     balleAucentre(){
         this.ball.x = game.config.width/2
@@ -96,7 +97,7 @@ class Scene extends Phaser.Scene{
         this.initVariables();
         this.createInput();
 
-        this.vie = new PlayerScore('Vies : ', 'joueurGauche');
+        this.vie = new PlayerScore('Vies :', 'joueurGauche');
         this.vie.score = this.lifeNumber;
         this.score = new PlayerScore('Score : ', 'joueurDroite');
 
