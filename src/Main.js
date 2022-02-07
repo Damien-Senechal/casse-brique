@@ -8,10 +8,9 @@ let gameConfig = {
     parent: 'game',
     physics: {
         default: 'arcade',
-        /*arcade: {
-            gravity: { y: 200 },
-            //debug : true
-        }*/
+        arcade: {
+            fps:60
+        }
     },
     scene: new Scene()
 };
